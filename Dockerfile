@@ -9,4 +9,4 @@ ADD . .
 #default port exposure
 EXPOSE 80
 #to start httpd on startup
-ENTRYPOINT https -DFOREGROUND
+ENTRYPOINT httpd -DFOREGROUND
