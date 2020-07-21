@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jaiwebappv002
+  name: jaiwebappv002
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jaiwebappv002
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jaiwebappv002
+    spec:
+      containers:
+      - image: jainendrak/devsecopsday2:jaiwebv002
+        name: devsecopsday2
+        imagePullPolicy: Always 
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jaiwebv002
+  name: jaiwebv002
+spec:
+  ports:
+  - name: 11234-80
+    port: 11234
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: jaiwebappv002
+  type: NodePort
+status:
+  loadBalancer: {}
