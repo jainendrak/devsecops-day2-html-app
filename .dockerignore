@@ -1,0 +1,6 @@
+Dockerfile
+.git
+*.md
+LICENSE
+.dockerignore
+docker-compose.yml

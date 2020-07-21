@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+        jaihtmlapp:
+                image: httpd:jaiv001
+                container_name: jaiver001
+                restart: always 
+                ports:
+                        - "11236:80"
+                mem_limit: 300m
